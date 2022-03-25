@@ -93,7 +93,7 @@ module.exports = env => {
 		devtool: devtool,
 
 		devServer: {
-			contentBase: false
+			static: false
 		},
 
 		output: {
