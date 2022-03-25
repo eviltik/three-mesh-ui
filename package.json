@@ -14,6 +14,7 @@
     "build": "npx webpack --config config/webpack.config.js",
     "build-site": "npx webpack --config config/webpack.prodConfig.js --env NODE_ENV=prod",
     "start": "webpack-dev-server --config config/webpack.prodConfig.js --open --env NODE_ENV=dev",
+    "start-https": "webpack-dev-server --config config/webpack.prodConfig.js --open --env NODE_ENV=dev --env NODE_SSL=true",
     "heroku-postbuild": "npx webpack --config config/webpack.prodConfig.js --env NODE_ENV=prod"
   },
   "repository": {

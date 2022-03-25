@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const utils = require('./utils.js');
 
 // data in format [ JS file name => demo title in examples page ]
 let pages = [
@@ -93,7 +94,10 @@ module.exports = env => {
 		devtool: devtool,
 
 		devServer: {
-			static: false
+			static: false,
+			server: env.NODE_SSL ? 'https' : 'http',
+			port: env.NODE_SSL ? '8443' : '8080',
+			host: env.NODE_SSL ? utils.getIpAddress(/wi-fi|eth0/i) : 'localhost'
 		},
 
 		output: {
